@@ -1,0 +1,68 @@
+<!-- CACHE
+FUNCTIONS
+EMBED -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <button onclick="loadData()">
+      LoadData
+    </button>
+  </div>
+  <div>
+    <iframe src="https://cjdeclaro.github.io/mapping-the-ph/elections-2025/embed.html" style="width: 100%; height: 80dvh"></iframe>
+  </div>
+
+  <div id="winner"></div>
+  <script>
+    let voteCounter = {};
+
+    async function loadData() {
+      let cityData = null;
+      let barangayNameForSearch = 'SAN ANTONIO';
+
+      cityData = localStorage[barangayNameForSearch];
+
+      if (!cityData) {
+        await fetch(
+            'https://raw.githubusercontent.com/cjdeclaro/2025-election-results-web-scrape/refs/heads/main/data/minified_local/REGION%20IV-A/BATANGAS/SANTO%20TOMAS.json'
+          )
+          .then(res => res.json())
+          .then(data => {
+            cityData = data;
+            localStorage[barangayNameForSearch] = JSON.stringify(data);
+          });
+      } else {
+        cityData = JSON.parse(cityData);
+      }
+
+      console.log(cityData);
+      let sanAntonio = cityData.data.find(obj => obj['barangayName'] === barangayNameForSearch);
+
+      sanAntonio.data.forEach(precinct => {
+        precinct.local[4].candidates.candidates.forEach(candidate => {
+          var temp = voteCounter[candidate.name];
+          if (temp) {
+            voteCounter[candidate.name] += candidate.votes;
+          } else {
+            voteCounter[candidate.name] = candidate.votes;
+          }
+        });
+      });
+
+      console.log(voteCounter);
+      voteCounter = {};
+    }
+  </script>
+
+</body>
+
+</html>
