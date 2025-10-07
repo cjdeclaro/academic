@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.nav {
+  padding: 10px;
+  text-align: right;
+}
+
+.header {
+  background-color: maroon;
+  padding: 100px;
+  text-align: center;
+  color: white;
+}

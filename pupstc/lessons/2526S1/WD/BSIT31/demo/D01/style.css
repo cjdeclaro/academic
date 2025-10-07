@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.nav {
+  background-color: white;
+  padding: 10px;
+  text-align: right;
+}
+
+.header{
+  background-color: maroon;
+  color: white;
+  padding: 100px;
+  text-align: center;
+}
