@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT 3-1 WD 2025 2026 S1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col">
+        <div class="display-3">
+          Student Works - BSIT 3-1
+        </div>
+      </div>
+    </div>
+    <div class="row" id="container">
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
+  <script>
+    var githubData = [
+      {
+        "lastName": "ALCANTARA",
+        "firstName": "JOHN RALPH",
+        "username": "garu10"
+      },
+      {
+        "lastName": "ALMARIO",
+        "firstName": "REYMIEL",
+        "username": "almarioreymiel"
+      },
+      {
+        "lastName": "ALVAREZ",
+        "firstName": "ALTHEA MISHKA",
+        "username": "altheaiyah"
+      },
+      {
+        "lastName": "AQUINO",
+        "firstName": "CHRISTINE ALLYSA",
+        "username": "allyaquino4"
+      },
+      {
+        "lastName": "AQUINO",
+        "firstName": "JULIA ALLARY",
+        "username": "eispetbirb"
+      },
+      {
+        "lastName": "ARTUZ",
+        "firstName": "CHRISTOPHER JR.",
+        "username": "sijey-cjaa"
+      },
+      {
+        "lastName": "AUSTRIA",
+        "firstName": "LANCE HENDRIX",
+        "username": "lance022721"
+      },
+      {
+        "lastName": "BALAHADIA JR.",
+        "firstName": "EDGAR",
+        "username": "edgarbalahadia"
+      },
+      {
+        "lastName": "BALAOGAN",
+        "firstName": "NYCO ALEC",
+        "username": "nycoalec"
+      },
+      {
+        "lastName": "BARRION",
+        "firstName": "ABIGAIL",
+        "username": "abigailcbarrion"
+      },
+      {
+        "lastName": "BIBAT",
+        "firstName": "TIMOTHY IRWIN",
+        "username": "timbibat"
+      },
+      {
+        "lastName": "BRAZIL",
+        "firstName": "JENEL ANGELA",
+        "username": "nelbrzil"
+      },
+      {
+        "lastName": "CABRIDO",
+        "firstName": "KARYLLE",
+        "username": "cabi0-o"
+      },
+      {
+        "lastName": "CONDES",
+        "firstName": "ALTHEA JADE",
+        "username": "thewaaan"
+      },
+      {
+        "lastName": "CORPUS",
+        "firstName": "ERMEL JOHN",
+        "username": "Ermel-06"
+      },
+      {
+        "lastName": "CRUZ",
+        "firstName": "ASHLEY BIANCA",
+        "username": "ashleybiancaecruz"
+      },
+      {
+        "lastName": "DIMAANO",
+        "firstName": "JOHN PATRICK",
+        "username": "patchysaurus"
+      },
+      {
+        "lastName": "ESQUIVEL",
+        "firstName": "EDCEL",
+        "username": "edski12"
+      },
+      {
+        "lastName": "GONZALES",
+        "firstName": "KEN CEDRICK",
+        "username": "kcd4050"
+      },
+      {
+        "lastName": "GUEVARRA",
+        "firstName": "MARC DARREN",
+        "username": "darrenguev"
+      },
+      {
+        "lastName": "JAVILLO",
+        "firstName": "ADRIAN VINCENT",
+        "username": "hiro-setsuya"
+      },
+      {
+        "lastName": "LABERINTO",
+        "firstName": "CHELSEA ANGELICA",
+        "username": "chelsealaberinto"
+      },
+      {
+        "lastName": "LACUARIN",
+        "firstName": "HART KRISTIANE",
+        "username": "hartlacuarin"
+      },
+      {
+        "lastName": "LAPITAN",
+        "firstName": "REYMARC",
+        "username": "reymarc-code"
+      },
+      {
+        "lastName": "MABINI",
+        "firstName": "GWYNETH XYLAMANE",
+        "username": "Gwyneth-Xylamane08"
+      },
+      {
+        "lastName": "MACANDILI",
+        "firstName": "JANA MAE",
+        "username": "anamacandili"
+      },
+      {
+        "lastName": "MACKAY",
+        "firstName": "JHON DREI",
+        "username": "akarieie"
+      },
+      {
+        "lastName": "MADRIAGA",
+        "firstName": "JOHN EDUARD",
+        "username": "educode597"
+      },
+      {
+        "lastName": "MAGPANTAY",
+        "firstName": "ALYANNA RIA",
+        "username": "magpantayalyanna"
+      },
+      {
+        "lastName": "MAGPANTAY",
+        "firstName": "CZYLLE JOHANNE",
+        "username": "zeejojo"
+      },
+      {
+        "lastName": "MAGPANTAY",
+        "firstName": "RHIANNE GABRIEL",
+        "username": "justyaloise"
+      },
+      {
+        "lastName": "MALABUYOC",
+        "firstName": "ANDREA",
+        "username": "malabuyocandream"
+      },
+      {
+        "lastName": "MALIBIRAN",
+        "firstName": "ELIAZA MAE",
+        "username": "eliazamae"
+      },
+      {
+        "lastName": "MANGABAT",
+        "firstName": "ROWEL GABRIEL",
+        "username": "rowelgabriel"
+      },
+      {
+        "lastName": "MARCELINO",
+        "firstName": "MARGARETTE",
+        "username": "garette18"
+      },
+      {
+        "lastName": "MARTINEZ",
+        "firstName": "JHON RAYVER",
+        "username": "JRayver"
+      },
+      {
+        "lastName": "MAYNETE",
+        "firstName": "ERICKA",
+        "username": "erickamaynete"
+      },
+      {
+        "lastName": "MERCADO",
+        "firstName": "JAMES FRANCIS",
+        "username": "jamexuu"
+      },
+      {
+        "lastName": "NAPOLES",
+        "firstName": "SERGETTE ANGELA",
+        "username": "sergette66"
+      },
+      {
+        "lastName": "OFRIN",
+        "firstName": "CHESKA SHARLENE",
+        "username": "cheskasharlene"
+      },
+      {
+        "lastName": "ORLANES",
+        "firstName": "JAMES PATRICK",
+        "username": "jamespatrickkk"
+      },
+      {
+        "lastName": "PALLA",
+        "firstName": "MIEL FRANCINE",
+        "username": "frncyn"
+      },
+      {
+        "lastName": "REANO",
+        "firstName": "SHELLY MARIE",
+        "username": "shellyreano"
+      },
+      {
+        "lastName": "REDONDO",
+        "firstName": "DENMAR",
+        "username": "Denscape"
+      },
+      {
+        "lastName": "REMO",
+        "firstName": "JOYCE ANNE",
+        "username": "joysicutes"
+      },
+      {
+        "lastName": "RIANZARES",
+        "firstName": "ALLEN MICHAEL",
+        "username": "Allen04-Rianzares"
+      },
+      {
+        "lastName": "RUBIA",
+        "firstName": "MA. KRISHA",
+        "username": "MinMin0504"
+      },
+      {
+        "lastName": "SANTOS",
+        "firstName": "CHINO KEONIE",
+        "username": "keotech"
+      },
+      {
+        "lastName": "SULIT",
+        "firstName": "JOHNLLOYD",
+        "username": "johnlloyd456"
+      },
+      {
+        "lastName": "SULIT",
+        "firstName": "PAUL ANGELO",
+        "username": "paulangelosulit"
+      },
+      {
+        "lastName": "SUMAGUE",
+        "firstName": "ANNE RITCHEL",
+        "username": "annrisu"
+      },
+      {
+        "lastName": "TORRELIZA",
+        "firstName": "AKHICIA MAE",
+        "username": "khicia"
+      },
+      {
+        "lastName": "UMALI",
+        "firstName": "KAZYRA",
+        "username": "zyyie"
+      },
+      {
+        "lastName": "VALENCIA",
+        "firstName": "JONASH",
+        "username": "jonash18"
+      },
+      {
+        "lastName": "VELASCO",
+        "firstName": "ROCHELLE MAE",
+        "username": "itschellay"
+      }
+    ]
+
+    var container = document.getElementById("container");
+    for (var i = 0; i < githubData.length; i++) {
+      var fullName = githubData[i].lastName + ", " + githubData[i].firstName;
+      var githubLink = "https://github.com/" + githubData[i].username;
+      var siteLink = "https://" + githubData[i].username + ".github.io";
+      container.innerHTML += `
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="card my-3 rounded-5 overflow-hidden">
+            <embed type="text/html" src="` + siteLink + `" width="100%" height="200px">
+            <div class="card-body shadow-lg">
+              <h6 class="card-title">` + fullName + `</h6>
+              <p class="card-text text-body-secondary">` + siteLink + `</p>
+              <a target="_blank" href="` + githubLink + `" class="btn btn-primary">GitHub</a>
+              <a target="_blank" href="` + siteLink + `" class="btn btn-primary">Site</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+
+</html>
