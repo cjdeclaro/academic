@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="bg" style="background-color: white; padding: 30px">
+    <img id="logo" src="logo B.png" style="width: 30%">
+  </div>
+
+  <button onclick="changeColor()">Change Mode</button>
+
+  <script>
+    function changeColor() {
+      var bg = document.getElementById("bg");
+      bg.style.backgroundColor = "black";
+
+      var logo = document.getElementById("logo");
+      logo.src = "logo W.png";
+    }
+  </script>
+</body>
+</html>

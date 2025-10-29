@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container mb-4 bg-dark">
+    <div class="row">
+      <div class="col p-5">
+        <div class="h1 text-center p-5 text-light">
+          Banner
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="h3">
+          FAQs <button id="btnShow" onclick="showFAQs()" class="btn btn-secondary btn-sm rounded-5 px-3 ms-3">Show</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <p style="display: none;" id="faqs">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi facere quos, facilis quia corrupti placeat
+          excepturi consequatur aspernatur, eaque maxime sunt tempore voluptas odio officia deleniti suscipit est
+          cupiditate ea.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var isFAQsHidden = true;
+
+    function showFAQs() {
+      var faqs = document.getElementById("faqs");
+      var btnShow = document.getElementById("btnShow");
+
+      if (isFAQsHidden) {
+        btnShow.innerHTML = "Hide";
+        faqs.style.display = "block";
+        isFAQsHidden = false;
+      } else {
+        btnShow.innerHTML = "Show";
+        faqs.style.display = "none";
+        isFAQsHidden = true;
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
