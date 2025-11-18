@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container mb-4 bg-dark">
+    <div class="row p-5">
+      <div class="col p-5">
+        <div class="h1 text-center text-light">
+          Hello World!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="h3">
+          FAQs <button onclick="hideAndShow()" id="show-hide-button"
+            class="btn btn-sm rounded-5 px-3 ms-3 btn-outline-secondary">Hide</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col" id="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla impedit adipisci maxime labore incidunt quasi
+        vitae fuga? Laboriosam impedit, aperiam dolore fuga quas, optio, assumenda sint cum aspernatur rerum
+        consequatur.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var isHidden = false;
+
+    function hideAndShow() {
+      var content = document.getElementById("content");
+      var btn = document.getElementById("show-hide-button");
+
+      if (isHidden) {
+        content.style.display = "block";
+        btn.innerHTML = "Hide";
+        isHidden = false;
+      } else {
+        content.style.display = "none";
+        btn.innerHTML = "Show";
+        isHidden = true;
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

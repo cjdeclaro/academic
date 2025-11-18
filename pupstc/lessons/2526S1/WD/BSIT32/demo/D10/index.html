@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div style="width: 1000px; position: relative;">
+    <img id="img" src="0.png" style="width: 100px; position: absolute; left: 900px">
+  </div>
+
+  <script>
+    var img = document.getElementById("img");
+    function sleep(ms){
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    var basePosition = 900;
+
+    async function animate(){
+      for(var i = 0; i < 5; i++){
+        img.src = i + ".png";
+        img.style.left = basePosition + "px";
+        basePosition -= 10;
+        await sleep(100);
+        if(i == 4){
+          i = -1;
+        }
+      }
+    }
+
+    animate();
+  </script>
+</body>
+</html>

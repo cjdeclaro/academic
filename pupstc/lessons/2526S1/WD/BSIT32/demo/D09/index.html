@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img id="img" src="0.png" style="width: 500px;">
+
+  <script>
+    var img = document.getElementById("img");
+    function sleep(ms){
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function animate(){
+      for(var i = 0; i < 4; i++){
+        img.src = i + ".png";
+        await sleep(300);
+        if(i == 3){
+          i = -1;
+        }
+      }
+    }
+
+    animate();
+  </script>
+</body>
+</html>

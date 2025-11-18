@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="banner" style="background-color: white; padding: 20px">
+    <img id="logo" src="logo W.png" style="width: 50px">
+  </div>
+
+  <button onclick="changeColor()">Click Me</button>
+
+  <script>
+    function changeColor(){
+      var banner = document.getElementById('banner');
+      var logo = document.getElementById('logo');
+
+      banner.style.backgroundColor = "black";
+      logo.src = "logo B.png";
+    }
+  </script>
+</body>
+</html>
