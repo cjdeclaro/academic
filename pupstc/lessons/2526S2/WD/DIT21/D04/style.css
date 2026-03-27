@@ -1,0 +1,13 @@
+.header {
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: maroon;
+  color: white;
+  padding: 100px;
+}
+
+.divider {
+  background-color: grey;
+  height: 20px;
+}
