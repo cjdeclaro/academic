@@ -1,29 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="h1 text-center" id="txtHello">Hello</div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="h1 text-center" id="txtHello">Hello</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="h3">Share</div>
+        <div class="card p-5 rounded-5 shadow" style="max-width: 300px;">
+          <img
+            src="" id="qrpic">
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const name = urlParams.get("name");
-      const color = urlParams.get("color");
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get("name");
+    const color = urlParams.get("color");
 
-      const txtHello = document.getElementById("txtHello");
-      txtHello.innerHTML = "Hello " + name;
-      txtHello.style.color = color;
-    </script>
-  </body>
+    const txtHello = document.getElementById("txtHello");
+    txtHello.innerHTML = "Hello " + name;
+    txtHello.style.color = color;
+
+    const qrpic = document.getElementById("qrpic");
+    qrpic.src = "https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=cjdeclaro.github.io/academic/pupstc/lessons/2526S2/ADET/BSIT32/view.html?name="+name+"%26color="+color;
+  </script>
+</body>
+
 </html>
