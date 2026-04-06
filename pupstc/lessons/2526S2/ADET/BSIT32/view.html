@@ -9,7 +9,7 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body>
+<body data-bs-theme="dark" id="body">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -42,8 +42,18 @@
     txtHello.innerHTML = "Hello " + name;
     txtHello.style.color = color;
 
+    const body = document.getElementById("body");
+
+    let bg = "FFFFFF";
+    let fg = "000000";
+
+    if(body.getAttribute("data-bs-theme") == "dark"){
+      bg = "212529";
+      fg = "FFFFFF";
+    }
+
     const qrpic = document.getElementById("qrpic");
-    qrpic.src = "https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=cjdeclaro.github.io/academic/pupstc/lessons/2526S2/ADET/BSIT32/view.html?name="+name+"%26color="+color;
+    qrpic.src = "https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=cjdeclaro.github.io/academic/pupstc/lessons/2526S2/ADET/BSIT32/view.html?name="+name+"%26color="+color+"&bgcolor="+bg+"&color="+fg;
   </script>
 </body>
 
