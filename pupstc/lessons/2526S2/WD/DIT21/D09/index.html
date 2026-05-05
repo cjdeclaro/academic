@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body data-bs-theme="dark">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card shadow p-5 mt-5 rounded-4 text-center">
+          <div class="h1 mb-4">Calculator</div>
+          <input class="form-control my-3" placeholder="Number 1" id="number1">
+          <input class="form-control my-3" placeholder="Number 2" id="number2">
+          <button class="btn btn-success my-4" onclick="calculate()">Calculate!</button>
+          <p class="h2 my-4" id="result">Result:</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  
+  <script>
+    const elNumber1 = document.getElementById("number1");
+    const elNumber2 = document.getElementById("number2");
+    const elResult = document.getElementById("result");
+
+    function calculate() {
+      var sum = parseInt(elNumber1.value) + parseInt(elNumber2.value);
+      elResult.innerHTML = "Result: " + sum;
+    }
+  </script>
+</body>
+
+</html>

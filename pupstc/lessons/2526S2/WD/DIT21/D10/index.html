@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+    .glass {
+      backdrop-filter: blur(20px) brightness(100%);
+      background-color: rgba(255, 0, 0, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid p-4 position-fixed top-0 z-1 glass">
+    <div class="row">
+      <div class="col">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col p-5">
+        <div class="card p-5 rounded-5 shadow">
+          <div class="mx-auto rounded-circle" style="width: 200px; height: 200px" id="imgBG">
+            <img class="w-100" src="" id="imgElement">
+          </div>
+          <div class="h2 text-center" id="pokemonName">
+            -
+          </div>
+          <div class="text-center" id="pokemonType">
+            -
+          </div>
+          <div style="height: 600px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+    const typeColors = {
+      water: "#5090D6",
+      dragon: "#0B6DC3",
+      electric: "#F4D23C",
+      fairy: "#EC8FE6",
+      ghost: "#5269AD",
+      fire: "#FF9D55",
+      ice: "#73CEC0",
+      grass: "#63BC5A",
+      bug: "#91C12F",
+      fighting: "#CE416B",
+      normal: "#919AA2",
+      dark: "#5A5465",
+      steel: "#5A8EA2",
+      rock: "#C5B78C",
+      psychic: "#FA7179",
+      ground: "#D97845",
+      poison: "#B567CE",
+      flying: "#89AAE3"
+    }
+
+    const pokemonName = document.getElementById("pokemonName");
+    const imgElement = document.getElementById("imgElement");
+    const pokemonType = document.getElementById("pokemonType");
+    const imgBG = document.getElementById("imgBG");
+
+    const getData = async () => {
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon/25');
+      const pokemonData = await response.json();
+
+      const name = pokemonData.name;
+      const pictureURL = pokemonData.sprites.other.home.front_default;
+      const type = pokemonData.types[0].type.name;
+
+      pokemonName.innerHTML = name.toUpperCase();
+      imgElement.src = pictureURL;
+      pokemonType.innerHTML = type;
+      imgBG.style.backgroundColor = typeColors[type];
+    }
+
+    getData();
+  </script>
+</body>
+
+</html>
