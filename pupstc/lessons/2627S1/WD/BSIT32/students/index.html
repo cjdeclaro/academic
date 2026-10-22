@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" id="parent">
+      
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var data = [
+      { lastName: "AALA", firstName: "JOHN PAOLO GUEVARRA", username: "jpguev" },
+      { lastName: "ANCHETA", firstName: "RHENDEL HERNANDEZ", username: "DelRhen" },
+      { lastName: "ANGCANA", firstName: "KIM ANDRIE LUMAGUI", username: "" },
+      { lastName: "ARIOLA", firstName: "ANGELICA DENISE MICO", username: "" },
+      { lastName: "ATENCIANA", firstName: "JOHN ZANDER BUEZA", username: "jderAtenciana" },
+      { lastName: "BALANI", firstName: "VINCENT CLETO CABRERA", username: "" },
+      { lastName: "BARTOLOME", firstName: "RALPH KEVIN MARQUEZ", username: "Vinco2025" },
+      { lastName: "BATHAN", firstName: "MICHAEL ANGELO GARDOCE", username: "Chael-bthn" },
+      { lastName: "BELEN", firstName: "ARLINE OÑATE", username: "arline08" },
+      { lastName: "BENEDICTOS", firstName: "JOHN CEDRICK DEOMANO", username: "jcbenedictos" },
+      { lastName: "CAPACIA", firstName: "CHEI LEANNE FUNILAS", username: "" },
+      { lastName: "CASTILLO", firstName: "RANIEL ANGELO MALLARI", username: "ranielcastillo17-creator" },
+      { lastName: "CRUZADO", firstName: "SAM RENLY RONDERA", username: "RENEL-199" },
+      { lastName: "CUEVAS", firstName: "PAULINE MAY LEGASPI", username: "polincuevas" },
+      { lastName: "DEYTO", firstName: "EMMANUEL CHRISTIAN EVANGELISTA", username: "ECEDeyto" },
+      { lastName: "FUKUHARA", firstName: "YOSHINOBU NAVALES", username: "Yosh-Fukuhara" },
+      { lastName: "GACIS", firstName: "RONALD MISCHA DE CASTRO", username: "rmgacis" },
+      { lastName: "GAJES", firstName: "PRINCE AARON ALCANTARA", username: "gjsaaron" },
+      { lastName: "GUTIERREZ", firstName: "GRACE ARINGO", username: "GraceO-O" },
+      { lastName: "HUMARANG", firstName: "JUDITH MALABANAN", username: "" },
+      { lastName: "INGENTE", firstName: "JAIRUS LIRA", username: "" },
+      { lastName: "JAVIER", firstName: "GUILLIAN ANN TUAZON", username: "GANNJAVIER" },
+      { lastName: "LAPITAN", username: "", firstName: "" },
+      { lastName: "LIMUTOS", firstName: "GERALD PANG", username: "geraldplimutos" },
+      { lastName: "LOPEZ", firstName: "DEIRICK MACARANAS", username: "" },
+      { lastName: "MABALOT", firstName: "MARCK JEDRICK SAMPANG", username: "MarckJedrickMabalot" },
+      { lastName: "MACASADIA", firstName: "PATRICK ARLAND BRONZAL", username: "patwickssss" },
+      { lastName: "MACASPAC", firstName: "LANCE JERICH MAGADIA", username: "maerich0" },
+      { lastName: "MALIJAN", firstName: "EULA MAE RIVERA", username: "eula-m" },
+      { lastName: "MANAGA", firstName: "EMMANUEL BORAGAY", username: "emmanmanaga" },
+      { lastName: "MANAIG", firstName: "KATHLENE CIELO YNGSON", username: "" },
+      { lastName: "MANALO", firstName: "ROLAND ARTHUR DELA CRUZ", username: "rthuro09" },
+      { lastName: "MARNILEGO", firstName: "ANDREI GABRIEL ARNAIZ", username: "" },
+      { lastName: "MOJARES", firstName: "CHARLIZE CHARLIZE MOJARES", username: "curlize" },
+      { lastName: "NARVACAN", firstName: "AERON PAULO", username: "AeronNarvacan" },
+      { lastName: "NICOMEDEZ", firstName: "IAN CYRUS SILVA", username: "" },
+      { lastName: "PAULITE", firstName: "GENSHIE PRAGATA", username: "genshie-hc" },
+      { lastName: "PEREA", firstName: "CYRIL TIFFANIE PAMPLONA", username: "" },
+      { lastName: "PINEDA", firstName: "CHRISTINE MIRANDA", username: "tintin1226" },
+      { lastName: "PUNZALAN", firstName: "LEA ANN MADRIAGA", username: "lapunzalan" },
+      { lastName: "QUIMIO", firstName: "AILA UNICE DELA PEÑA", username: "kimyows" },
+      { lastName: "RECAÑA", firstName: "PRINCES KHYLE PALADAN", username: "khylerecana" },
+      { lastName: "REGENTE", firstName: "SOPHIA BALAI", username: "regentesophia" },
+      { lastName: "RUBIANES", firstName: "SHYRA MALBATAAN", username: "shyramrbns" },
+      { lastName: "SAAVEDRA", firstName: "FRANCIS RIVERA", username: "FrancisSaavedra" },
+      { lastName: "SANCHEZ", firstName: "MARIANE LOUISE BAJAR", username: "marianelouisesanchez" },
+      { lastName: "SERCEÑA", firstName: "MARC ANDREI GLODOVIZA", username: "mrcsrcna" },
+      { lastName: "SILVANO", firstName: "MARIAH CARMELA MALABANAN", username: "Aiah-Silvano" },
+      { lastName: "TAMBAGO", firstName: "AVIEL JOSH CONCEPCION", username: "avieltmbgo03" },
+      { lastName: "TOLENTINO", firstName: "MARA HANNA IRISH ORTIZ", username: "maratolentino" },
+      { lastName: "VALENZONA", firstName: "JOHN GABRIEL TUPLANO", username: "johngabvalenzona" },
+      { lastName: "YSUG", firstName: "MYRA ARBADO", username: "MyraYsug" }
+    ]
+
+    var parent = document.getElementById("parent");
+
+    for(var i = 0; i < data.length; i++) {
+      var username = data[i].username;
+      var firstName = data[i].firstName;
+      var lastName = data[i].lastName;
+
+      parent.innerHTML += `
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card p-3 my-3">
+            <iframe src="https://`+username+`.github.io" width="100%" height="300px"></iframe>
+            <div class="h4">`+ lastName + ", " + firstName +`</div>
+            <div>
+              <a href="https://`+username+`.github.io" target="_blank">
+                <button class="btn btn-secondary">Site</button>
+              </a>
+              <a href="https://github.com/`+username+`" target="_blank">
+                <button class="btn btn-outline-secondary">Github</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+  </script>
+</body>
+
+</html>

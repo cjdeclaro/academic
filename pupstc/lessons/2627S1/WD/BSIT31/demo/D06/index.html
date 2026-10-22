@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid p-4 bg-danger">
+    <div class="row">
+      <div class="col">
+        <div class="h3 text-center text-white">
+          PokeDex
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <div class="card rounded-5 p-5">
+          <div class="d-flex flex-row">
+            <input type="text" class="form-control rounded-start-pill" placeholder="Enter Pokemon Name or ID" id="searchInput">
+            <div class="btn btn-primary rounded-end-pill" onclick="getPokemon()">Search</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col">
+        <div class="card shadow rounded-5 p-5 text-center">
+
+          <div id="imageContainer" class="mx-auto rounded-circle" style="width: 300px; height: 300px;">
+            <img src="" style="width: 100%;" id="image">
+          </div>
+          
+          <div class="h3 my-3" id="name">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="rounded-5 px-4 py-1" id="type"></span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio" src="" autoplay></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+    const colors = {
+      fire: '#FDDFDF',
+      grass: '#DEFDE0',
+      electric: '#FCF7DE',
+      water: '#DEF3FD',
+      ground: '#f4e7da',
+      rock: '#d5d5d4',
+      fairy: '#fceaff',
+      poison: '#cbc3e3',
+      bug: '#f8d5a3',
+      dragon: '#97b3e6',
+      psychic: '#eaeda1',
+      flying: '#F5F5F5',
+      fighting: '#E6E0D4',
+      ghost: '#eaeda1',
+      normal: '#F5F5F5'
+    };
+
+    function capitalizeFirstLetter(str) {
+      if (!str) return str; // Handle empty strings safely
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+
+    var elName = document.getElementById("name");
+    var elImage = document.getElementById("image");
+    var elType = document.getElementById("type");
+    var elImageContainer = document.getElementById("imageContainer");
+
+    var auCry = document.getElementById("audio");
+    
+    var inSearchInput =  document.getElementById("searchInput");
+
+    const getPokemon = async () => {
+      elName.innerHTML = "Loading " + inSearchInput.value;
+      elImage.src = "";
+      elType.innerHTML = "";
+
+      const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + inSearchInput.value);
+      const pokemon = await response.json();
+
+      var type = pokemon.types[0].type.name;
+
+      elName.innerHTML = capitalizeFirstLetter(pokemon.name);
+      // elImage.src = pokemon.sprites.other['official-artwork'].front_default;
+      elImage.src = pokemon.sprites.other.home.front_default;
+      elType.innerHTML = type;
+      elImageContainer.style.backgroundColor = colors[type];
+      elType.style.backgroundColor = colors[type];
+      auCry.src = pokemon.cries.latest;
+
+      auCry.play();
+    }
+  </script>
+</body>
+
+</html>

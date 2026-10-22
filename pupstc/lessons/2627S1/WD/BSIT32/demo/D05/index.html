@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" id="parent">
+
+
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var people = [
+      {
+        firstName: "Ada",
+        lastName: "Lovelace",
+        age: 27,
+        pets: [
+          {
+            type: "cat",
+            name: "whitey",
+            age: 3
+          },
+          {
+            type: "fish",
+            name: "browney",
+            age: 2
+          }
+        ]
+      }, {
+        firstName: "Bill",
+        lastName: "Gates",
+        age: 28,
+        pets: []
+      }, {
+        firstName: "Steve",
+        lastName: "",
+        age: 29,
+        pets: [
+          {
+            type: "dog",
+            name: "Menudo",
+            age: 6
+          }
+        ]
+      }
+    ]
+
+    var parent = document.getElementById("parent");
+
+    for (var i = 0; i < people.length; i++) {
+      parent.innerHTML += `
+        <div class="col-12">
+          <div class="card my-3 shadow rounded-3 p-3">
+            <div class="h2">` + people[i].firstName + " " + people[i].lastName + `</div>
+            <div class="my-3" id="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, at eaque cumque aut quaerat quo, molestias,
+              obcaecati temporibus nihil nulla quae. Autem nisi repudiandae hic ratione velit suscipit libero molestiae.
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+
+</html>

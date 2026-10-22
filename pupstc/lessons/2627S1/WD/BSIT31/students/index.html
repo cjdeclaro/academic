@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row" id="parent">
+      
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+    var data = [
+      { lastName: "ABARQUEZ", firstName: "LAURENCE PAUL", username: "AzureAwakener" },
+      { lastName: "ABELLA", firstName: "CHRIZYL", username: "chrizyl" },
+      { lastName: "ABIERA", firstName: "KRYSTEL MAE", username: "snckish" },
+      { lastName: "ABIÑO", firstName: "JENNIFER KYLIE", username: "jennnnnn-k" },
+      { lastName: "AMILER", firstName: "JAY PATRICK", username: "Patrick-Star-662006" },
+      { lastName: "AMOSCO", firstName: "BETHANY ZYREEN", username: "bethanyzyreen" },
+      { lastName: "ATINON", firstName: "JHODY", username: "jhy-atnn" },
+      { lastName: "BELARMINO", firstName: "CARL JUSTIN", username: "justinbelarmino" },
+      { lastName: "BOTE", firstName: "JOSHUA MIGUEL", username: "Distinct714" },
+      { lastName: "CAIDIC", firstName: "GLEN SIDNEY", username: "MuSuffleMuchii" },
+      { lastName: "CUTARAN", firstName: "VERGEL JR.", username: "vjctrn" },
+      { lastName: "DACOLIAT", firstName: "PAUL JOSHUA", username: "dacoliatpaul-boop" },
+      { lastName: "DE LA PEÑA", firstName: "IVAN P", username: "So-ye" },
+      { lastName: "DOMINO", firstName: "DENZEL", username: "denzel027" },
+      { lastName: "EBORA", firstName: "SEBASTIAN LUIS", username: "sebastianluisebora-svg" },
+      { lastName: "ESTAÑOL", firstName: "JEXEQUIEL", username: "" },
+      { lastName: "EVANGELISTA", firstName: "ARISH JAN", username: "ennerdAJME" },
+      { lastName: "EXCONDE", firstName: "MARC JUSTINE", username: "MarcExconde" },
+      { lastName: "FORTIN", firstName: "MYCA CIELO", username: "no-one-like-zion" },
+      { lastName: "GONZAGA", firstName: "GLEN GABRIEL", username: "yomii-dev" },
+      { lastName: "GUEVARRA", firstName: "EDWARD", username: "eadweardly" },
+      { lastName: "ILAO", firstName: "JEN MAE", username: "jenmaeilao" },
+      { lastName: "LAT", firstName: "DONNA MAE", username: "donnamaelat" },
+      { lastName: "LINATOC", firstName: "KIMBERLY", username: "csnvrea" },
+      { lastName: "LOMA", firstName: "ALDRICH SAM", username: "casti-rich" },
+      { lastName: "LOMIBAO", firstName: "CHASTE ANTHONY", username: "chastelomibao" },
+      { lastName: "LUZANO", firstName: "MARK ANTHONY", username: "YaoGuangGlazer" },
+      { lastName: "MAGBOO", firstName: "MARY JOSEPHINE", username: "itsmaryjm" },
+      { lastName: "MAGPAYO", firstName: "SHEMAIAH EZRA", username: "shemaiahezra-m" },
+      { lastName: "MALABANAN", firstName: "RYAN POL", username: "ryanpoldev" },
+      { lastName: "MALAIBA", firstName: "JUSTINE LUIGE", username: "" },
+      { lastName: "MANZO", firstName: "JOSE MIGUEL", username: "jomelmnz" },
+      { lastName: "MERCADO", firstName: "KAILE ARKIN", username: "Arkinetic-1" },
+      { lastName: "MONCAYO", firstName: "AERYLL REIGN", username: "" },
+      { lastName: "ONDO", firstName: "LANCE GABRIEL", username: "lanceondo" },
+      { lastName: "PADUHILAO", firstName: "NATALIE", username: "ntlpdhl" },
+      { lastName: "PALOMO", firstName: "LIAM MATHEW", username: "Liam-yam" },
+      { lastName: "PATDU", firstName: "PATRIO GABRIEL", username: "Patdu-G" },
+      { lastName: "PEÑA", firstName: "CARL ANTHONY", username: "" },
+      { lastName: "PERCAL", firstName: "GABRIEL", username: "AlterGedorah" },
+      { lastName: "RINGOR", firstName: "RANS CLEMEN EMDEE", username: "Emdee-git" },
+      { lastName: "RIVERA", firstName: "CHARLIE", username: "riveracharlie" },
+      { lastName: "ROJO", firstName: "CHESTER CAREY", username: "" },
+      { lastName: "ROYOL", firstName: "MARY JANE", username: "skibijy" },
+      { lastName: "SARICAL", firstName: "JASON LANCE", username: "" },
+      { lastName: "TACHIBANA", firstName: "SEITO", username: "Seeeiiiii" },
+      { lastName: "TALAS", firstName: "TRISHA MAE", username: "" },
+      { lastName: "TANGLAO", firstName: "WAYNE SAILA", username: "waynesailat" },
+      { lastName: "TRIA", firstName: "MARK JUSTIN", username: "markjtria" }
+    ]
+
+    var parent = document.getElementById("parent");
+
+    for(var i = 0; i < data.length; i++) {
+      parent.innerHTML += `
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card p-3 my-3">
+            <iframe src="https://`+data[i].username+`.github.io" width="100%" height="400px"></iframe>
+            <div class="h4">
+              `+data[i].lastName+`, `+data[i].firstName+`
+            </div>
+            <div class="my-3">
+              <a href="https://`+data[i].username+`.github.io" target="_blank">
+                <div class="btn btn-secondary">Site</div>
+              </a>
+              <a href="https://github.com/`+data[i].username+`" target="_blank">
+                <div class="btn btn-secondary">GitHub</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+
+</html>
