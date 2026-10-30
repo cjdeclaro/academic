@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid bg-danger shadow mb-3">
+    <div class="row">
+      <div class="col">
+        <div class="text-center display-6 text-white py-3">Dex</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" onclick="prev()">Previous</a></li>
+        <li class="page-item"><a class="page-link" id="currentPage">1</a></li>
+        <li class="page-item"><a class="page-link" onclick="next()">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="row" id="parent">
+      
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+    const colors = {
+      fire: '#FDDFDF',
+      grass: '#DEFDE0',
+      electric: '#FCF7DE',
+      water: '#DEF3FD',
+      ground: '#f4e7da',
+      rock: '#d5d5d4',
+      fairy: '#fceaff',
+      poison: '#cbc3e3',
+      bug: '#f8d5a3',
+      dragon: '#97b3e6',
+      psychic: '#eaeda1',
+      flying: '#F5F5F5',
+      fighting: '#E6E0D4',
+      normal: '#F5F5F5',
+      ghost: '#f8d5a3',
+    };
+
+    function capitalizeFirstLetter(str) {
+      if (!str) return str;
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    var page = urlParams.get('page');
+
+    page = page == null ? 1 : page;
+
+    var perPageLoad = 20;
+    var totalPokemons = 1025;
+    var lastPage = Math.ceil(totalPokemons / perPageLoad);
+
+    var elParent = document.getElementById("parent");
+    var elCurrentPage = document.getElementById("currentPage");
+
+    const getPokemon = async () => {
+      elParent.innerHTML = '';
+      elCurrentPage.innerHTML = page;
+      for(var i = (perPageLoad * (page - 1)) + 1; i <= perPageLoad * page; i++) {
+        var response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i);
+        var pokemon = await response.json();
+
+        var type = pokemon.types[0].type.name;
+        var name = pokemon.name;
+        var id = pokemon.id;
+        var picture = pokemon.sprites.other['official-artwork'].front_default;
+        var color = colors[type];
+
+        elParent.innerHTML += `
+          <div class="col-12">
+            <div class="card my-3 shadow-sm p-4 d-flex flex-row align-items-center">
+              <div class="rounded-circle" style="width: 60px; height: 60px; background-color: ` + color + `;">
+                <img class="w-100" src="` + picture + `">
+              </div>
+              <div class="mx-4 h4">
+                <a style="text-decoration: none" href="view.html?id=`+ id +`&page=`+page+`"> #` + id + " " + capitalizeFirstLetter(name) + ` </a>
+              </div>
+              <div class="rounded-pill px-4" style="background-color: ` + color + `">` + capitalizeFirstLetter(type) + `</div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function prev() {
+      page -= 1;
+      if(page == 0){
+        page = lastPage;
+      }
+      getPokemon();
+    }
+
+    function next() {
+      page += 1;
+      if(page > lastPage){
+        page = 1;
+      }
+      getPokemon();
+    }
+
+    getPokemon();
+  </script>
+</body>
+
+</html>
